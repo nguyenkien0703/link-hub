@@ -64,8 +64,8 @@ deploy:
 	git pull
 	@echo "$(CYAN)🔨 Rebuilding image...$(RESET)"
 	docker compose build --no-cache app
-	@echo "$(CYAN)🔄 Restarting app...$(RESET)"
-	docker compose up -d --no-deps app
+	@echo "$(CYAN)🔄 Starting stack (db + app)...$(RESET)"
+	docker compose up -d
 	@echo ""
 	@echo "  $(GREEN)$(BOLD)✅ Deploy xong$(RESET)"
 	@echo "  $(GRAY)Xem logs: make logs$(RESET)"
