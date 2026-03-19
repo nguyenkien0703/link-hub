@@ -64,7 +64,8 @@ deploy:
 	git pull
 	@echo "$(CYAN)🔨 Rebuilding image...$(RESET)"
 	docker compose build --no-cache app
-	@echo "$(CYAN)🔄 Starting stack (db + app)...$(RESET)"
+	@echo "$(CYAN)🔄 Restarting stack...$(RESET)"
+	docker compose down
 	docker compose up -d
 	@echo ""
 	@echo "  $(GREEN)$(BOLD)✅ Deploy xong$(RESET)"
